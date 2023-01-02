@@ -1,0 +1,41 @@
+❖What is DevOps:
+
+Devops is a culture that promotes collaboration between 
+Development(Dev) and Operation(Ops) Team.
+This allows deploying code to production faster and in an 
+automated way.
+It helps to increase an organization speed to deliver 
+application and services.
+There are lots of tools are available in a market.some of them 
+are listed below
+→Git(Version Control System)
+→Jenkins(CI/CD Tool)
+→Gradle/Maven(Build the application)
+→Ansible(Configuration Management Tool)
+→Docker(Containerzation Tool)
+→Kubernetes(Container Management Tool)
+→Grafana(Monitoring Tool)
+
+❖What is Automation, Scaling:
+
+Automation:-
+Automation is the ability to use technology to perform 
+tasks with minimal human effort,using Automation we can 
+run several jobs or applications automatically .we can also 
+have a facility to schedule a job at a specified time,when 
+our job are run automatically.
+
+Scaling:-
+Scaling can be defined as a process to expand the existing 
+configuration (servers/computers) to handle a large 
+number of user requests or to manage the amount of load 
+on the server. This process is called scalability. This can 
+be done either by increasing the current system 
+configuration (increasing RAM, number of servers) or 
+adding more power to the configuration.
+There are 2 types:
+→ Vertical Scaling- increasing the capacity of a same 
+machine by adding more resources such as 
+storage,memory. 
+→ Horizontal Scaling - adding more instances of the same 
+type of machine 
