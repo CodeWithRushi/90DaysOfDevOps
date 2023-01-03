@@ -1,0 +1,37 @@
+                Day – 2
+Task:- Basics linux command
+
+A Linux command is a program  that runs on the command line. 
+A command line is an interface that accepts lines of text and processes them into instructions for your computer
+The kernel communicate with hardware and shell and manage user requests. 
+
+Below are the some useful Linux Commands:
+
+pwd : It shows current working Directory
+ls: It shows available files and directory list in the present working.
+uname- it shows the name of the kernel
+cd- change directory
+clear- clear the screen
+whoami- it shows currently logged user name
+history-it shows list of previous used commands
+date- it shows current date and time
+mkdir-to create a directory
+touch- to create a file
+cp-is used to copy paste of all file or directory
+useradd- for adding new user
+passwd-to create user account password
+su- switch user account
+… and many more.
+
+
+List all the files or directories including hidden files.
+ls -l : list the files and directories in log list
+ls -a : list all including hidden files and directory
+ls .txt : list all the files having .txt extension
+
+Create a nested directory A/B/C/D/E
+ mkdir –p  A/B/C/D/E
+tree
+ 
+ 
+ 
