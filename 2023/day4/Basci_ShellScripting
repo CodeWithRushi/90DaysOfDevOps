@@ -1,0 +1,69 @@
+Day 4 Task: Basic Linux Shell Scripting for DevOps Engineers.
+
+What is Kernel :
+The kernel is a computer program that is the core of a computer’s operating system, with complete control over everything in the system.
+
+What is Shell:
+A shell is special user program which provide an interface to user to use operating system services. Shell accept human readable commands from user and convert them into something which kernel can understand. It is a command language interpreter that execute commands read from input devices such as keyboards or from files. The shell gets started when the user logs in or start the terminal.
+
+
+What is Linux Shell Scripting:
+A shell script is a computer program designed to be run by a linux shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
+Tasks:
+I)Explain in your own words and examples, what is Shell Scripting for DevOps.
+A Shell is an  environment that interprets user request to run programs. A Shell Scripting is a collection of shell commands and programming constructs, writing in a single file with .sh extension.
+To run this file use bash or sh environment.
+                                              bash Sample.sh
+
+
+II)What is #!/bin/bash? can we write #!/bin/sh as well?
+The shebang or bang line , #!/bin/bash or #!/bin/sh when used in scripts is used to instruct the operating system to use bash or sh as a command interpreter.
+
+
+III)Write a Shell Script which prints “I will complete #90DaysOofDevOps challenge”
+      #!/bin/bash
+      echo "I will complete #90DaysOofDevOps challenge"
+  		
+
+IV)Write a Shell Script to take user input, input from arguments and print the variables.
+      #!/bin/bash
+      echo "Enter 2 Elements"
+      read parm1 parm2
+      echo -e 'use Single quotes, to print the variable name $parm1 and $parm2'
+      echo -e "use double quotes, to print the value of variable i.r. $parm1 and $parm2"
+
+
+
+V)Write an Example of If else in Shell Scripting by comparing 2 numbers
+
+      #!/bin/bash
+      echo "Enter 2 Numbers"
+      read parm1 parm2
+
+      if [ $parm1 -gt $parm2 ]
+       then
+        echo "$parm1 is a Big Number"
+        elif [ $parm1 -lt $parm2 ]
+      then
+        echo "$parm2 is a Big Number"
+      elif [ $parm1 -eq $parm2 ]
+        then
+        echo "Both NUmbers are Equal"
+      else
+        echo "Wrong Input"
+      fi      
+
+
+
+
+
+ 		
+
+
+
+
+
+
+
+
+
