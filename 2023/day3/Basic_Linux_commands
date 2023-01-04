@@ -1,0 +1,59 @@
+Day 3 Task: Basic Linux Commands 
+
+ 
+
+To view what's written in a file. 
+
+cat : The cat command is used to reads data from the file and gives their content as output. . 
+
+	 
+
+To change the access permissions of files. 
+
+chmod: chmod is the command  used to change the access permissions and the special mode flags of file system objects. 
+
+ 
+
+ 
+
+To check which commands you have run till now. 
+
+history : history command is used to view the previously executed command 
+
+		 
+
+ 
+
+To remove a directory/ Folder. 
+
+  rm –rvf : rm command to remove files you no longer need 
+
+		 
+
+ 
+
+To create a fruits.txt file and to view the content. 
+
+              Add content in fruits.txt (One in each line) - [Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava]. 
+
+touch: touch command is used to create a file in Linux. 
+
+		 
+
+To create a Colors.txt file and to view the content. 
+
+              Add content in Colors.txt (One in each line) - [Red, Pink, White, Black, Blue, Orange, Purple, Grey]. 
+
+		 
+
+To find the difference between fruits.txt and Colors.txt file. 
+
+diff:	diff stands for difference. This command is used to display the differences in the files by comparing the files line by line. 
+
+ 
+
+		 
+
+ 
+
+ 
