@@ -1,0 +1,92 @@
+Day 6 Task: File Permissions and Access Control Lists 
+
+ 
+	Linux Permissions: 
+
+This Linux  permissions give you the authority to open and perform some operations on a file. In Linux There are 3 types of Permissions: 
+
+Read :- This Permission allows you to open and read the content of a file 
+
+Write :- This Write permission allows you to wdit,rename,remove of a file 
+
+Execute :- Using this permission, you can execute a file. 
+
+To Check the permission of file,use below command, 
+
+			ls –la 
+
+		 
+
+`In Permissions ,there are 3 typs of classes: 
+
+User : Permission used for owner of the file 
+
+Group : Permissions used by members of the group 
+
+Other : Permissions used by all other uers. 
+
+ 
+Set Permission with Numeric value: 
+
+	r( read ) :- 4 
+
+	w( Write ) :-2 
+
+	X( Execute ) :- 1 
+
+  
+
+	For change permission: 
+
+		chmod 700 Sample.txt 
+
+	 
+
+	For change Ownership 
+
+		chown rushi Sample.txt 
+
+ 
+
+	For change the Group Ownership of a file or directory 
+
+		chgrp  New_Group_Name  File_Name 
+
+ 
+
+Read about ACL and try out the commands getfacl and setfacl 
+
+ 
+
+		Access Control list(ACL) provides an additional, more  flexible permssion for file systems. 
+
+		Access Control list is a service which is use for providing special permission to specific user and group to particular directories and file 
+
+ 
+
+	setfacl and getfacl are used for setting up ACL and showing ACL respectively 
+
+	
+	To Get the Permissions of ACL 
+
+		getfacl ubuntu/Rushi/Sample.txt	 
+
+ 
+	To Set the Permission of ACL 
+
+		setfacl –m u:ubuntu:rwx ubuntu/Rushi/Sample.txt 
+
+
+	Remove ACL Permission 
+
+		setfacl –b ubuntu/Rushi/Sample.txt 
+
+ 
+
+ 
+
+	 
+
+ 
+
+	 
