@@ -1,0 +1,110 @@
+Day 5 Task: Advanced Linux Shell Scripting for DevOps Engineers with User management 
+
+ 
+
+Tasks: 
+
+ 
+
+You have to do the same using Shell Script i.e using either Loops or command with start day and end day variables using arguments - 
+
+So Write a bash script createDirectories.sh that when the script is executed with three 	given arguments (one is directory name and second is start number of directories and 	third is the end number of directories ) it creates specified number of directories with a 	dynamic directory name. 
+
+Example 1: When the script is executed as 
+
+./createDirectories.sh day 1 90 
+
+then it creates 90 directories as day1 day2 day3 .... day90 
+
+	 
+
+Example 2: When the script is executed as 
+
+./createDirectories.sh Movie 20 50 then it creates 50 directories as Movie20 Movie21 Movie23 ...Movie50 
+
+
+ Create a Script to backup all your work done till now. 
+ 
+ Read About Cron and Crontab, to automate the backup Script 
+
+	    
+
+	cron:-  
+
+		cron is a command line utility,that takes user input commands and a 		scheduler will automatically starts a job or program. 
+
+	crontab:  
+
+		A command called crontab allows the user to submit, edit or delete 		entries to cron. A crontab file is a user file that holds the scheduling 		information. 
+
+		The location of crontab file is 
+
+			etc/crontab 
+
+		The Command of to Check the available crontab	 
+
+	 
+
+crontab –l   : to show all the current jobs 
+
+crontab –e : to edit or add new jobs 
+
+ 
+
+Read about User Management and Let me know on Linkedin if you're ready for Day 6. 
+
+	Users: 
+
+		 Users are accounts that can be used to login into a system. Each user has a  UID(Unique ID)  given by the system. 
+
+The User Details are stored in a file called etc/passwd. This file contains information about the Users. 
+
+Each user also called as a single group. 
+
+The root user is also a member of a Supplementary group root. The ID 0 is assigned to the root user and the IDs 1 to 999 (both inclusive) are assigned to the system users and hence the ids for local user begins from 1000 onwards. 
+
+ 
+
+Some Basic User Management Commands: 
+
+sudo useradd  username : to add a user in a system. 
+
+sudo passwd username : to Create a user account Password 
+
+	 
+
+	 
+
+	Group: 
+
+A group is a collection of users' accounts Users can be listed in different groups. Group allow us to set permission on the group level. 
+
+Some Basic User Management Commands: 
+
+sudo groupadd Devops :- To add a group account 
+
+sudo cat /etc/group :- To check group account Property 
+
+sudo groupdel Devops :-  To delete the group account 
+
+sudo gpasswd –a Rushi Devops :- To add a single user into group 
+
+sudo gpasswd –M Rushi Samir Devops :- To add multiple users into group and override old users. 
+
+	 
+
+	 
+
+	 
+
+ 
+
+  
+
+	 
+
+Create 2 users and just display their Usernames 
+
+ 
+
+ 
