@@ -1,0 +1,147 @@
+Day 7 Task: Understanding package manager and systemctl 
+
+ 
+
+ 
+
+What is a package manager in Linux? 
+
+  Package Managers is a group of software tools. It is mostly used to automate the proces of installing,upgrading,configuring and removing programs. 
+
+  The Packages manager can be a graphical application like software center.  
+
+ 
+
+What is a Package? 
+
+		A Package is usually referred to an application but it could be a GUI application,command line tool or software library. A Paackage metadata contains package version,package description,and dependencies 
+
+ 
+
+Tasks: - 
+
+ 
+
+    You have to install docker and jenkins in your system from your terminal using package managers. 
+
+ 
+
+Install Docker :- 
+
+ 
+	Here below commands are used to install Docker and Manage Docker 
+
+	sudo apt-get remove docker-engine  docker.io :- Remove any Docker files that are running in the system. 
+
+ 
+
+        sudo apt-get update :- Check if the System is up-to-date. 
+
+ 
+
+        sudo apt install docker.io :- To install docker 
+
+                 sudo snap install docker :- install dependency packages 
+
+ 
+
+       docker –version :- To check Docker Version 
+
+     	       sudo docker run hello-world :- pull the “hello-world ” imge from Docker Hub 
+
+		sudo docker images :- to check the available images list. 
+
+		sudo docker ps –a :- to check the process states of all containers 
+
+										 	 
+
+ 
+
+Install Jenkins:- 
+
+Before installing jenkins, first we need to install java. 
+
+Link(install java): https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-do-I-install-Java-on-Ubuntu 
+
+ 
+
+	sudo apt install default-jdk 
+
+	java –version 
+
+		 
+
+Here refer below Link  to install and configure  Jenkins  
+
+Link(install jenkins) : https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-22-04 
+
+ 
+
+What is systemctl and systemd? 
+
+	The systemctl command is a systemd utility to manage services and get information about service states. 
+
+systemd gives us the systemctl commands suite which is mostly used to enable services to start at boot time. We can also start, stop, reload, restart and check status of services with the help of systemctl. 
+
+ 
+
+check the status of docker service in your system (make sure you completed above tasks, else docker won't be installed) 
+
+			systemctl status docker 
+
+		 
+
+ 
+
+stop the service jenkins and post before and after screenshots 
+
+			systemctl status jenkins 
+
+ 			systemctl stop jenkins 
+
+			systemctl status jenkins 
+
+
+systemctl vs service  
+
+ 
+
+initd and systemd are both init daemons. Init uses service whereas systemd uses systemctl to manage linux services.  
+
+Both are used to manage services like start,stop,restart,reload the service and also check the status of the service. 
+
+ 
+
+systemctl:- 
+
+systemctl  start docker.service 
+
+systemctl stop docker.service 
+
+systemctl reload docker.service 
+
+systemctl restart docker.service 
+
+systemctl  status docker.service 
+
+ 
+
+service:- 
+
+service docker status 
+
+service docker start 
+
+service docker stop 
+
+service docker restart 
+
+	 
+
+	 
+
+ 
+
+ 
+
+ 
