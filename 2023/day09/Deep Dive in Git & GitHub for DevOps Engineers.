@@ -1,0 +1,162 @@
+Day 9 Task: Deep Dive in Git & GitHub for DevOps Engineers. 
+
+ 
+
+What is Git and why is it important? 
+
+	Git is a Devops Tools,is mainly used to  source code management. 
+
+There are 2 types of the  source code management 
+
+	Centralized version control system 
+
+            Distributed version control System 
+
+Git is a free and open source Distributed version control System used to handle small to lage project easily.Git is a technology, they allows developers to work together on a non-linear development. Git also allows developers to keep the local copy of the remote repository. To make a change in a local repository, and again push to remote repository for the latest code is  available to others developers. 
+
+Git keeps tracks of all your versions,so in any case you can rollback to previous version ,you easily rolled out by using single commend. 
+
+With the VCS ,all the team members are allowed to work freely on any file at any time.VCS gives you the flexibility to merge all the changes into a common version. 
+
+A distributed vcs like git allows all the team members to have a complete history of the project,so if there isa breakdown in the central server you can use any of your teammate’s local git repository. 
+
+A Web based version is available for git I.e. Github.Github is cloud based platform uses the git technology to maintain  distributed version control systems. 
+
+ 
+
+What is difference Between Main Branch and Master Branch? 
+
+	In Git the master branch is a default branch. There main difference between main and master is  only naming convention. GitHub has recently renamed it’s “master” branch to “main” branch. 
+
+		 
+
+	Master or main branch is a root branch, In this branch all the changes eventually get merged back. This is typically the branch where the main development work takes place and from which other branches are created. 
+
+ 
+
+ 
+
+Can you explain the difference between Git and GitHub? 
+
+	GIT: 
+
+	Git is a technology used to distributed version control system to manage development project source code history. 
+
+	Git is DevOps tool ,the developer Installs locally on their computer. It First Released on 2005 and maintained by Linux foundation. 
+
+The Git is mainly focused on version control and code sharing also provides preliminary command line tools 
+
+ 
+
+GITHUB:- 
+
+GitHub is a cloud based or web based platform and they uses git technology. 
+
+GitHub is a web based service, the developers who use git can connect and upload and download resources. GitHub first Released on 2008 and maintained by Microsoft. 
+
+GitHub is available on a web and is mainly  focused on centralized source code hosting. 
+
+ 
+
+How do you create a new repository on GitHub? 
+
+	Follow below steps to create a new Repository on GitHub: 
+
+Sign in or create a new account on Github 
+
+On the top right corner of the screen, click on (+) symbol and click “New Repository” 
+
+			 
+
+On the next stage, enter a name of your repository, a short description  and select where this repository is available  public(visiable to everyone) or private.	 
+
+			 
+
+After that, the New Repository will be created. 
+
+	 
+
+What is difference between local & remote repository? How to connect local to remote? 
+
+	Git is Distributed version control system. That’s why you can create or store repository on local. 
+
+	Local Repository is a repository that is stored on your computer I.e. each team members. While Remote Repository is a repository that is stored on separate machine or server. 
+
+	One of the main Difference between a local and Remote repository is,  
+
+The local repository is accessible only you and your own machine. While the Remote repository is accessible to everyone over the internet. 
+
+This is useful for developers to collaborate on the same codebase.  
+
+ 
+
+Follow below steps,to connect local to Remote:- 
+
+First step is, clone your remote project 
+
+		git clone <remote url> 
+
+After that check the git status and add untracked files to staging 
+
+		git status 
+
+		git add . 
+
+		 
+
+After that commit the staged changes 
+
+		git commit –m “Commit Message” 
+
+		 
+
+Go to local repository, and first check the available remote URL 
+
+		git remote -v 
+
+If no any url are added, then add the remote repository as an origin to your local using below git command 
+
+		git remote add origin <remote repository url > 
+
+After connect to remote, push the local repository master branch to the remote repository using  
+
+		git push –u origin master 
+
+ 
+
+	 
+
+	 
+
+	 
+
+ 
+
+If you facing any Authentication issue, please follow below steps 
+
+Go to Setting 
+
+		 
+
+Go below and click Developer settings 
+
+	 
+
+Select personal access tokens and choose tokens(classic). 
+
+	 
+
+ 
+
+ 
+
+ 
+
+--------------------Happy Learning😊---------------------- 
+
+ 
+
+	 
+
+ 
+ 
