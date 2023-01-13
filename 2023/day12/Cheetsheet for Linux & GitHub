@@ -1,0 +1,215 @@
+Cheetsheet for Linux & GitHub 
+
+ 
+
+Linux:- 
+
+ 
+
+ls :- it shows all the available files and directories in the present directory 
+
+pwd :- it shows the present workig directory 
+
+uname :- it shows the name of the kernel 
+
+uname –r : it shows the version of the kernel 
+
+cd :- it use for change directory 
+
+clear :- it use for clear screen 
+
+whoami :-it show currently login user name 
+
+history :- it shows list of previously used commands 
+
+date :- it shows current date and time 
+
+mkdir  <DirectoryName> : to create a empty directory 
+
+	mkdir –p <directoryName>{1..10} :- to create multiple directory at a time 
+
+touch <filename> :- to create a empty file 
+
+	touch <filename>{1..10} :- to create m  
+
+rm –rvf <filename/directory name> :- to remove a file/directory 
+
+mv  <source> <destination> :- move files from one location to another location 
+
+cp  <source> <destination> :- copy files from one location to another location 
+
+      User Management 
+
+sudo useradd <username> :- To create user 
+
+sudo passwd <username> : To create user password 
+
+su <another_userName> : Switch to different user 
+
+exit :- Logout from current user account 
+
+sudo userdel <userName> :- delete a user account 
+
+      Group Management 
+
+sudo groupadd <groupName> :- To add groupAccount 
+
+gpasswd –a <UserName> <GroupName> :- add a single user to group 
+
+gpasswd –m <UserName> <UserName> <GroupName> :- add a multiple user to group 
+
+ 
+
+sudo groupdel <groupName> :- To delete group 
+
+sudo gpasswd –d <username> <groupName> :- To delete a user from a specific group 
+
+      Linux File System Permission 
+
+chmod <permissions> <fileName> :-  To Change the Permissions of a file 
+
+chown  <userName> <file/directoryName> :- To change the owner of a file/Directory 
+
+chgrp <groupName> <file/directoryName> :- To change the group owner of a file/Directory 
+
+      Regular Expression/Pattern Search 
+
+ grep [options] <Pattern> <files> :- To search a file for a particular pattern 
+
+		grep  *.txt /home/ubuntu/Devops  
+
+find <source> [options] <pattern> :- Find a pattern in a working file Hierarchy 
+
+		find /home/ubuntu/Devops -name *.txt   
+
+wc –lwm <file name> :- To find no.of .Lines,no.of Words,and no.of counts Respectively 
+
+		wc –lwm Sample.txt 
+
+ head [options] <fileName>:- To display default 10 first Lines 
+
+		head Sample.txt 
+
+tail [options] <fileName>:- To display default 10 first Lines 
+
+		tail –n 2 Sample.txt 
+
+      Archive File in Linux 
+
+tar <options> <files> :- using tar combining multiple files/directories into one file . 
+
+		tar –cvzf  /home/ubuntu/Devops/. 
+
+		-c: create  ,  -x : extract , v : verbose , forcefully ,z : gzip , t : list files of archived files 
+
+      Job Automation 
+
+crontab  -e :- To set cron jobs 
+
+crontab –l :- to show cron jobs for current user 
+
+ crontab –r :- to remove cron jobs 
+
+     Networking 
+
+ifconfig :-for show ip address 
+
+	ip addr 
+
+scp <access token I.e. .pem file> <source file> <destination remote path> :- copy files from loacl to remote server 
+
+	 
+
+	 
+
+     Control Services and Daemons 
+
+systemctl status <Service name> or service <service name> status :- To check service current status 
+
+systemctl start <Service name> or service <service name> start :- To start service  
+
+systemctl stop <Service name> or service <service name> stop :- To stop service 
+
+systemctl enable <Service name> or service <service name> enable :- To enable service 
+
+ 
+
+ 
+
+ 
+
+Git/GitHub :- 
+
+ 
+
+git :- to check git is installed or not 
+
+git init :- To initialize empty git repository 
+
+git config –global user.name <username> :- to set the configuration globally. if you want to set locally then just remove the --global 
+
+	git congig –global user,email <useremail> 
+
+ git clone <repository url> :- to clone repository from remote to local 
+
+git add <filename> : Add files to stagging. If you want to add multiple fies, you simplly use . Instead of file name  
+
+git commit –m “commit message” :- to commit the stagged changes to git 
+
+git restore <modified file name> : Restore files from being modified to Tracked 
+
+git status :- To show the current git status 
+
+git branch :- To Show the all available branches 
+
+git checkout –b <new_branch_name> :- to create a new branch 
+
+Git branch –d <branch name> : - To delete a branch name 
+
+git checkout  <new_branch_name> :- Go to existing branch 
+
+git remote –v :- To show remote origin url 
+
+git remote add origin <your remote origin url> :- To add remote url to origin 
+
+Git remove remote origin :- To remove remote origin url 
+
+Git fetch :- Fetch all remote branches 
+
+Git push origin <branch name> : Push your local changes to Remote branch 
+
+Git pull origin <branch name> :- Pull your remote branches to local 
+
+Git log :- check your commits and logs 
+
+Git merge <branch name> :- Merge all the changes from one branch to Master/Main Branch 
+
+Git rebase <branch name> :- Same like merge with master branch. Only change is first master branch merge with another branch. Again this merged branch merge with master. 
+
+Git reset <commit hash value> :- go back to required commits and in midddle all commits are deleted 
+
+Git cherry-pick  <commit hash value> :- Apply particular commit from one branch to another branch 
+
+Git stash :- To save the Modified changes. To help store temp changes 
+
+Git stash pop :-To Re-apply the previous commits by using git stash 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
