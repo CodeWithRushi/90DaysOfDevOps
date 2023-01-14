@@ -1,0 +1,179 @@
+Start DevOps With Python 
+
+ 
+
+ 
+
+What is Python? 
+
+Python is a Open source, general purpose, high level, and object-oriented programming language. 
+
+It was created by Guido van Rossum 
+
+Python consists of vast libraries and various frameworks like Django, TensorFlow, Flask, Pandas, Keras etc. 
+
+Python is the one of the best scripting language. This Python libraries allows to write scripts to improved development life cycle. 
+
+A Python Automation Script is platform independent also supports multi tool integration. 
+
+How to Install Python? 
+
+You can install Python in your System whether it is window, MacOS, ubuntu, centos etc. Below are the links for the installation: 
+
+Windows Installation 
+
+Ubuntu: apt-get install python3.6 
+
+Task1: 
+
+Install Python in your respective OS, and check the version. 
+
+	Here follow the below steps to install python on ubuntu 
+
+	Ref:- https://phoenixnap.com/kb/how-to-install-python-3-ubuntu 
+
+	 
+
+ 
+
+	To check python version 
+
+	python3 –version 
+
+	 
+
+	 
+
+Read about different Data Types in Python. 
+
+ 
+
+	Before going to explain different data types, first we understand 
+
+	What is Datatype 🤔? 
+
+		Python Data Types are define what kind of data or value are stored in a variable. 
+
+All datatypes are in lower case.  
+
+	Here’s is the list of Python Data Types 
+
+txt Type:- str	 
+
+	str:- Strings are a collection of characters and always enclosed within single or double quote. 
+
+		ex: - 
+
+		Temp_variable= “Rushikesh Shelke” 
+
+ 
+
+Numeric Data Types :-int,float,complex 
+
+	int:- Integer, is a whole positive or negative number without Decimal 
+
+		ex:- 
+
+int :     		temp_number= 20 
+
+ 
+
+float:- Float, is a  positive or negative number with one or more Decimal. 
+
+	ex:- 
+
+float : 		temp_number=20.0 
+
+ 
+
+complex:- Complex number are written with j and “j ”is the imaginary part. 
+
+	ex:- 
+
+complex		temp_Complex=16j	 
+
+ 
+
+Sequence Types:-list tuple, range 
+
+List :     
+
+Lists are used to store multiple values in a single variable 
+
+List elements are ordered,changeable,and allow duplicate values. 
+
+ex:- 
+
+    		DevOpsTool=["Git”,”Jenkins”,”Ansible”] 
+
+Tuple:		 
+
+Tuples are used to store multiple values in a single variable 
+
+Tuple elements are ordered,Unchangeable,and allow duplicate values. 
+
+ ex:- 
+
+DevOps_Tool=("Git”,”Jenkins”,”Ansible”) 
+
+range		 
+
+A Range function returns a sequence of numbers, starting from 0 by default.	 
+
+  ex:-			 
+
+ranges=range(10) start with default 0	 
+
+Mapping Type:-  
+
+		i. dict:-  
+
+Dictionaries are used to store data in a “Key: Value”	pair. 
+
+Dictionary elements are ordered, changeable, and do not allow duplicate values. 
+
+   ex:- 
+
+			Info={“name": "Rushikesh Shelke” , ”Role”:”DevOps Engineer”} 
+
+ 
+
+Set Types :- 
+
+set 
+
+sets are used to store multiple values in a single variable 
+
+sets elements are unordered,Unchangeable,Unindexed and does not allow duplicate values. 
+
+ex: - 
+
+DevOps_Tools={"Git”,”Jenkins”,”Ansible”} 
+
+ frozenset 
+
+	  ex:- 
+
+	 DevOps_Tools=frozenset({"Git”,”Jenkins”,”Ansible”})	 
+
+Boolean Type :-  
+
+Bool 
+
+Booleans represent one of two values: True or False. 
+
+		ex:- 
+
+flag=True 
+
+ 
+
+ 
+
+ 
+
+ 
+
+------------------------ 😃 Happy Learning, Ruko Mat Phod do😃---------------------- 
+
+ 
