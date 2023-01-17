@@ -1,0 +1,15 @@
+AZURE:
+  count: 500
+  instances: 500
+  name: VM
+  type: pay per hour
+GCP:
+  count: 500
+  instances: 500
+  name: COMPUTE ENGINE
+  type: pay per hour
+aws:
+  count: 500
+  instances: 500
+  name: EC2
+  type: pay per hour
