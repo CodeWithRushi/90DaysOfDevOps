@@ -1,0 +1,142 @@
+Day 16 Task: Docker for DevOps Engineers. 
+
+ 
+
+Docker 
+
+ 
+
+Docker is a software platform that allows you to build, test, and deploy applications quickly. Docker packages software into standardized units called containers that have everything the software needs to run including libraries, system tools, code, and runtime. Using Docker, you can quickly deploy and scale applications into any environment and know your code will run. 
+
+ 
+
+	 
+ 
+
+ Docker is a tool that performs OS-level virtualization, called as Containerization. Using this 	container Docker run applications. It allows applications to use the same Linux. 
+
+ 
+
+When we decide to deploy a application, we need a dockerfile. 
+
+A Dockerfile is like a set of instructions for making a container. It tells Docker what base image to use, what commands to run, and what files to include. 
+
+Dockerfile uses some of commands to communicate with Docker and create a Docker image. 
+
+Brief description of Docker Commands: 
+
+1] FROM -  This Command is used to specify the base image and version. 
+
+2]RUN - Execute a command in the image. This command is run during the building the image 		process. 
+
+3]COPY - This COPY command is used to copy the files from host machine to image. 
+
+4] ENV - This ENV command are used to set the environment variable in the image. 
+
+5] CMD - CMD execute the command same as shell command and they are not capable of 	run or 	execute a image 
+
+6]ENTRYPOINT - ENTRYPOINT execute the command same as CMD. This is latest version of CMD 		Command 
+
+7]EXPOSE - Specifies the ports that should be exposed on the container 
+
+8]ADD -  This ADD command is same as COPY command  used to copy the files from host machine to i	mage. 
+
+The Only diff is, Using ADD Command you copy the data from tar archived files as well as you 	copy the data from using <URL> 
+
+ 
+
+Tasks 
+
+ 
+
+As you have already installed docker in previous days tasks, now is the time to run Docker commands. 
+
+Use the docker run command to start a new container and interact with it through the command line. [Hint: docker run hello-world] 
+
+	Syntax:- 
+
+	 
+
+	Here we using Run Command. This command is used for Creating a Container 
+
+	 
+
+	 
+
+	 
+
+Use the docker inspect command to view detailed information about a container or image. 
+
+	Syntax:- 
+
+		 
+
+	 
+
+	Docker inspect provides detailed information on constructs controlled by Docker. 
+
+		 
+
+Use the docker port command to list the port mappings for a container. 
+
+	Syntax:- 
+
+		 
+
+	Suppose you want to find out all mapped port, then you will use this port command 
+
+		 
+
+Use the docker stats command to view resource usage statistics for one or more containers. 
+
+	Syntax:- 
+
+		 
+
+	The Docker stats returns a live data stream for running container. 
+
+		 
+
+Use the docker top command to view the processes running inside a container. 
+
+	Syntax:- 
+
+		 
+
+	Mostly the Docker Top command is used to, Display the running process of a container. 
+
+		 
+
+ 
+
+ 
+
+Use the docker save command to save an image to a tar archive. 
+
+	Syntax:- 
+
+		 
+
+	Use Save  command to save one or more images to a tar archive 
+
+	 
+
+	 
+
+Use the docker load command to load an image from a tar archive. 
+
+	Syntax:- 
+
+	 
+
+	Load an image from a tar archive 
+
+		 
+
+These tasks involve simple operations that can be used to manage images and containers. 
+
+ 
+
+---------------------------------------------Happy Learning😊----------------------------------------------- 
+
+ 
