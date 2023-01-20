@@ -1,0 +1,161 @@
+Day 18 Task: Docker for DevOps Engineers 
+
+ 
+
+Docker Compose 
+
+ 
+
+Docker Compose is a tool that was developed to help define and share multi-container applications. 
+
+With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down. 
+
+Learn more about docker-compose visit here 
+
+What is YAML? 
+
+ 
+
+YAML is a data serialization language that is often used for writing configuration files. Depending on whom you ask, YAML stands for yet another markup language or YAML ain’t markup language (a recursive acronym), which emphasizes that YAML is for data, not documents. 
+
+YAML is a popular programming language because it is human-readable and easy to understand. 
+
+YAML files use a .yml or .yaml extension. 
+
+Read more about it here 
+
+ 
+
+Task-1: 
+
+ 
+
+Learn how to use the docker-compose.yml file, to set up the environment, configure the services and links between different containers, and also to use environment variables in the docker-compose.yml file. 
+
+Before Docker-compose we, all are using Docker run command to Create a Docker Container. 
+
+But there are some limitations. 
+
+So, to overcome these limitations, The new methodology is come i.e.  Docker-compose. 
+
+ 
+
+Docker Compose is a tool for defining and running multi-container (frontend and backend) Docker applications. 
+
+Docker-compose uses .yaml or .yml file for configuring application services. 
+
+ 
+
+Install Docker-compose: 
+
+		sudo apt-get install docker-compose 
+
+			 
+
+ 
+
+Check Docker-compose version 
+
+		sudo docker-compose –v 
+
+Create a Docker-compose file 
+
+		vi docker-compose.yml 
+
+	 
+
+	1] version: - It denotes that version of Docker compose 
+
+	2] services: - It denotes the different containers(services) of docker. 
+
+	3] container_ name: using this keyword, to set the container name 
+
+	4] build: - The build keyword specifies the location of Dockerfile. 
+
+	5] image: - This keyword is used to specify the image. 
+
+	6] ports: for web and DB container, we are using the ports keyword to mention the ports that 		    need to be exposed. 
+
+	7] environment: - Using This keyword, we can set environment variables. 
+
+ 
+
+Run a docker-compose.yml file 
+
+	sudo docker-compose.yml -d 
+
+	Docker compose has a capability to build and run the dockerfile and run the container. If images are not present locally, then it pulls the image from DockerHub.	 
+
+Check the Running Docker Container 
+
+	sudo docker-compose ps 
+
+	 
+
+Verify the application on web browser 
+
+	<public Ip address>:<port number> 
+
+	 
+
+Sample docker-compose.yaml file 
+
+ 
+
+Task-2 
+
+ 
+
+Pull a pre-existing Docker image from a public repository (e.g., Docker Hub) and run it on your local machine. Run the container as a non-root user (Hint- Use usermod  command to give user permission to docker). Make sure you reboot instance after giving permission to user. 
+
+	 
+
+		Run the container as a non-root user. 
+
+	 
+
+ 
+
+	Pull the image from Docker-Hub 
+
+	 
+
+Inspect the container's running processes and exposed ports using the docker inspect command. 
+
+		docker inspect <container-id or name> 
+
+Use the docker logs command to view the container's log output. 
+
+		docker logs <container-id or name> 
+
+	 
+
+Use the docker stop and docker start commands to stop and start the container. 
+
+	To stop the docker-container 
+
+		docker stop <container-id or name> 
+
+		 
+
+	To start the docker-container 
+
+		docker start <container-id or name>  
+
+Use the docker rm command to remove the container when you're done. 
+
+		docker rm <container-id or name> 
+
+ 
+
+Verify the application on web browser 
+
+		<public ip address>:<port number> 
+
+ 
+
+ 
+
+ 
+
+ 
