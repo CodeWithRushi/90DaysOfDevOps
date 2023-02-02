@@ -1,0 +1,39 @@
+Day-22: Getting Started with Jenkins
+Tasks:
+1. What you understood in Jenkin, write a small article in your own words 
+
+(Don't copy from Internet Directly)
+Jenkins is a tool that is used for automation, and it is an open-source server that allows all the 
+developers to build, test and deploy software. The Jenkins is written in java, that is the reason, 
+when you want to run Jenkins. Then first you install java on your system.
+By Using Jenkins, we can make an end-to-end automation (CI/CD). There are over a thousand 
+plugins that you can use to extend Jenkins’ capabilities and make it more user-specific. All of 
+these plugins and extensions are developed in Java.
+Advantages of Jenkins:
+1] It is an open-source tool.
+2]It is free of cost.
+3] easy to install
+4] It supports 1000 or more plugins to ease your work. If a plugin does not exist, you can 
+write the script for it and share with community.
+5] It is platform independent. It is available for all platforms and different operating systems. Like 
+OS X, Windows or Linux.
+6] Jenkins also supports cloud-based architecture so that we can deploy Jenkins in cloud-based 
+platforms.
+You want to install Jenkins on ubuntu? Please refer below official page to install Jenkins.
+https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-22-04
+
+2. Create a freestyle pipeline to print "Hello Your Name”
+Jenkins freestyle projects allow users to automate simple jobs, such as running tests, creating and 
+packaging applications, producing reports, or executing commands.
+How to Set up a Build Job in Jenkins
+1] Login to the AWS EC2 Ubuntu Instance and install java, Jenkins. 
+2] On AWS EC2 instance, allow 8080 port(inside security group) because Jenkins Uses default 
+port 8080.
+3] Go to Jenkins Dashboard and click on New item
+4] Give your Project Name and select Freestyle Project as the Project Type.
+5] In the Configuration section, scroll down to the “Build” section and add an “Execute shell” 
+build step
+6] After this step, click on Save button.
+7]go to Dashboard and click on “Build now symbol”.
+8] Check the console output for “Hello Rushikesh” message.
+-----------------------------------------Happy Learning -------------------------------------------
