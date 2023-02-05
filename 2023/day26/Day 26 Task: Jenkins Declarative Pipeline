@@ -1,0 +1,131 @@
+Day 26 Task: Jenkins Declarative Pipeline 
+
+ 
+
+One of the most important parts of your DevOps and CICD journey is a Declarative Pipeline Syntax of Jenkins 
+
+Some terms for your knowledge 
+
+ 
+
+What is Pipeline - A pipeline is a collection of steps or jobs interlinked in a sequence. In Other words, a jenkins pipeline is a collection of jobs that brings the code from version control (GitHub) into hands of the end users by using automation tools. 
+
+ 
+
+There are 2 ways to write a pipeline script 
+
+1] Declarative 
+
+2] scripted 
+
+1] Declarative: 
+
+Declarative is a more recent and advanced implementation of a pipeline as a code. 
+
+Simpler Groovy syntax 
+
+Code is written locally in a file and is checked in to SCM(github). 
+
+The Code is defined with in ‘pipeline block’ 
+
+2] Scripted:  
+
+Scripted was the first and most traditional implementation of the pipeline as a code in Jenkins. It was designed as a general-purpose DSL (Domain Specific Language) built with Groovy. 
+
+Stricter Groovy syntax 
+
+Code is written on the Jenkins UI instance 
+
+The code is defined within a 'node block’. 
+
+Why you should have a Pipeline: - 
+
+ 
+
+ 
+
+The definition of a Jenkins Pipeline is written into a text file (called a Jenkinsfile) Which in turn can be committed to a project’s source control repository. 
+This is the foundation of "Pipeline-as-code"; treating the CD pipeline as a part of the application to be versioned and reviewed like any other code. 
+
+Creating a Jenkinsfile and committing it to source control provides a number of immediate benefits: 
+
+Automatically creates a Pipeline build process for all branches and pull requests. 
+
+Code review/iteration on the Pipeline (along with the remaining source code). 
+
+Pipeline syntax 
+
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build') {  
+            steps { 
+                //  
+            } 
+        } 
+        stage('Test') {  
+            steps { 
+                //  
+            } 
+        } 
+        stage('Deploy') {  
+            steps { 
+                //  
+            } 
+        } 
+    } 
+} 
+
+Task-01 :-  
+
+ 
+
+Create a New Job, this time select Pipeline instead of Freestyle Project. 
+
+Goto Jenkins Dashboard and click on New Item. And select Pipeline as a project and 	enter the Project name  
+
+ 
+
+ 
+
+ 
+
+After going inside the configuration page, add the Description and in pipeline section select 	pipeline script option. 
+
+Write small Pipeline script using Groovy syntax. And then click apply and save. 
+
+Pipeline: - The Declarative pipeline should start with the pipeline block and this is the mandatory 		      block. 
+
+Agent: - Agent signifies where the Jenkins build job should run. In this case we have selected 		agent as any. 
+
+Stages: - It Contain all the work each stage performs a specific task. 
+
+Steps: - steps are carried out in sequence to execute a stage. 
+
+ 
+
+, 
+
+ 
+
+Now it’s time to Build the Project, click on Build Now Option and Build the project 
+
+ 
+
+Go to console output and see the logs. Your application is stored on below path	 
+
+/var/lib/jenkins/workspace/Day27Task  
+
+ 
+
+As you can see from the above output, the pipeline run successfully and printed 
+
+ Hello 	World 
+
+ 
+
+ 
+
+ 
+
+--------------------Happy Learning😊---------------------- 
