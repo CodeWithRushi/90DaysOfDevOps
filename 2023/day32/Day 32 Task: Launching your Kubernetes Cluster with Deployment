@@ -1,0 +1,155 @@
+Day 32 Task: Launching your Kubernetes Cluster with Deployment 
+
+ 
+
+Congratulation! on your learning on K8s on Day-31 
+
+ 
+
+What is Deployment in k8s 
+
+ 
+
+A Deployment provides a configuration for updates for Pods and ReplicaSets. 
+
+You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new replicas for scaling, or to remove existing Deployments and adopt all their resources with new Deployments. 
+
+Today's task let's keep it very simple. 
+
+Task-1: 
+
+ 
+
+Create one Deployment file to deploy a sample todo-app on K8s using "Auto-healing" and "Auto-Scaling" feature 
+
+	Note: [ Connect EC2 instance and start the minikube, if not started] 
+
+	 
+
+		minikube start 
+
+	 
+
+ 
+
+add a deployment file (sample is kept in the folder for your reference) 
+
+		vi deployment.yaml 
+
+apiVersion: v1 
+
+kind: Deployment 
+
+metadata: 
+
+    name: django-deployment 
+
+    labels: 
+
+      app: django 
+
+spec: 
+
+    replicas: 3 
+
+    selector: 
+
+      matchLabels: 
+
+        app: django 
+
+    template: 
+
+      metadata: 
+
+        labels: 
+
+          app: django 
+
+      spec: 
+
+        containers: 
+
+          - name: django-ctr 
+
+            image: rushis750/django:latest 
+
+            ports: 
+
+              - containerPort: 8001 
+
+	 
+
+The Deployment yaml file is same as previous pod.yaml file. The Only difference is some additional tags. 
+
+labels: - 
+
+Labels are assigned to any object(pod,node,etc) 
+
+A Label is a key-value pair and is attached to objects 
+
+Labels are similar to tags in AWS or git where you use a name to quick reference. 
+
+Multiple Label can be added to a single object. 
+
+ 
+
+Selector: - 
+
+		K8s selectors allow users to filter objects based on labels, and can be used by the 			Kubernetes platform as well. From a user perspective, K8s labels and 	selectors can manipulate objects such as: 
+
+Pods 
+
+Nodes 
+
+Services 
+
+Secrets 
+
+Ingress Resources 
+
+Deployments 
+
+Namespaces 
+
+	 
+
+Template: 
+
+		Using Template, we can configure a Pod configuration. 
+
+ 
+
+apply the deployment to your k8s (minikube) cluster by command kubectl apply -f deployment 
+
+		kubectl apply -f deployment.yaml 
+
+Note: - [ Here we use Default Namespace, if you already added namespace in your yaml file, then add this namespace name after deployment.yaml file] 
+
+ 
+
+ 
+
+Check The Pod are running with mentioned replicas 
+
+ 
+
+ 
+
+You can check the Detailed information of Your Pods 
+
+	kubectl describe -f deployment.yaml 
+
+ 
+
+ 
+
+You can see the running container 
+
+	minikube ssh 
+
+ 
+
+ 
+
+ 
