@@ -1,0 +1,139 @@
+Day 33 Task: Working with Namespaces and Services in Kubernetes 
+
+ 
+
+Congrats🎊🎉 on updating your Deployment yesterday💥🙌 
+
+What are Namespaces and Services in k8s 
+
+In Kubernetes, Namespaces are used to create isolated environments for resources. Each Namespace is like a separate cluster within the same physical cluster. Services are used to expose your Pods and Deployments to the network. Read more about Namespace Here 
+
+Today's task: 
+
+ 
+
+Task 1: 
+
+ 
+
+What is Namespace? 
+
+ 
+
+A Namespace is a group of related elements that each have a unique name or identifier. Namespace is used to uniquely identify one or more names from other similar names of different objects, groups or the namespace in general. 
+
+Kubernetes namespaces help different projects, teams or customers to share a Kubernetes cluster and provides a scope for every names 
+
+By default, a Kubernetes cluster will instantiate a default namespace, when provisioning the cluster to hold the default set of pods, services and deployment used by cluster. 
+
+Most Kubernetes resources (pods,services,replication controller and others) are in same namespaces and low-level resources such as Nodes,Persistentvolumes are not in any namespaces. 
+
+  
+
+Create a Namespace for your Deployment 
+
+		kubectl create namespace react-django-ns 
+
+Use the command kubectl create namespace <namespace-name> to create a Namespace 
+
+	To check available namespaces 
+
+		kubectl get namespaces 
+
+ 
+
+	Delete the Previous (Use in Day32) Deployment file 
+
+		kubectl delete -f deployment.yaml 
+
+	 
+
+Update the deployment file to include the Namespace 
+
+		vi deployment.yaml 
+
+apiVersion: v1 
+
+kind: Deployment 
+
+metadata: 
+
+    name: django-deployment 
+
+    namespace: react-django-ns   
+
+    labels: 
+
+      app: django 
+
+spec: 
+
+    replicas: 3 
+
+    selector: 
+
+      matchLabels: 
+
+        app: django 
+
+    template: 
+
+      metadata: 
+
+        labels: 
+
+          app: django 
+
+      spec: 
+
+        containers: 
+
+          - name: django-ctr 
+
+            image: rushis750/django:latest 
+
+            ports: 
+
+              - containerPort: 8001 
+
+ 
+
+ 
+
+		 
+
+Apply the updated deployment using the command: kubectl apply -f deployment.yml -n <namespace-name> 
+
+		kubectl apply -f deployment.yaml -n react-django-ns 
+
+	 
+
+	Checking the Running Pods 
+
+	 
+
+	For remove a pod and see, how exactly the Auto Healing is works 
+
+		kubectl delete pods django-deployment-7cf8f56b48-2rftg -n react-django-ns 
+
+	 
+
+ 
+
+	Goto MiniKube running Container and see all container are running 
+
+	 
+
+Verify that the Namespace has been created by checking the status of the Namespaces in your cluster. 
+
+Task 2: 
+
+Read about Services, Load Balancing, and Networking in Kubernetes. Refer official documentation of Kubernetes Link 
+
+Need help with Namespaces? Check out this video for assistance. 
+
+Keep growing your Kubernetes knowledge💥🙌 
+
+Happy Learning! :) 
+
+ 
