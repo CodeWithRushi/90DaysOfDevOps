@@ -1,0 +1,270 @@
+Day 37 Task: Kubernetes Important interview Questions. 
+
+ 
+
+Questions 
+
+ 
+
+1.What is Kubernetes and why it is important? 
+
+Kubernetes is an open-source Container Management tool that automates container deployment, container scaling, descaling, and container load balancing 
+
+Kubernetes can group ‘n’ number of containers into one logical unit for managing and deploying them easily. It works brilliantly with all cloud vendors i.e., public, hybrid, and on-premises.   
+
+Kubernetes schedules and automates container deployment across multiple compute nodes, whether on the public cloud, onsite VMs or physical on-premises machines. Its automatic scaling lets teams scale up or down to meet demand faster. 
+
+ 
+
+2.What is difference between docker swarm and Kubernetes? 
+
+Feature 
+
+Kubernetes 
+
+Docker-Swarm 
+
+Installation & cluster Configuration 
+
+Installation is complicated, but once setup, the cluster is very strong 
+
+Installation is very simple but cluster is not very strong 
+
+GUI 
+
+GUI is the Kubernetes Dashboard 
+
+There is no GUI 
+
+Scalability 
+
+Highly scalable and scales fast 
+
+Highly scalable as compare to K8s. 
+
+Auto-Scaling 
+
+Kubernetes can do auto-scaling 
+
+Docker swarm cannot do auto-scaling 
+
+Load Balancing 
+
+Manual intervention needed for load balancing traffic between different containers in different pods. 
+
+Doker swarm does auto load balancing of traffic between containers in the cluster. 
+
+Data Volumes 
+
+Can share storage volumes only with other containers in same pod. 
+
+Can share storage volumes with any other container. 
+
+Logging & Monitoring 
+
+In-built tools for logging & monitoring 
+
+3rd part tools like ELK should be used for logging & monitoring. 
+
+ 
+
+3.How does Kubernetes handle network communication between containers? 
+
+Kubernetes networking uses iptables to control the network connections between pods (and between nodes), handling many of the networking and port forwarding rules. This way, clients do not need to keep track of IP addresses to connect to Kubernetes services. 
+
+ 
+
+4.How does Kubernetes handle scaling of applications? 
+
+Different cloud platforms have different native autoscaling features. Kubernetes enables autoscaling at the cluster/node level as well as at the pod level, two different but fundamentally connected layers of Kubernetes architecture. 
+
+When you deploy an application in GKE, you define how many replicas of the application you'd like to run. When you scale an application, you increase or decrease the number of replicas. Each replica of your application represents a Kubernetes Pod that encapsulates your application's container(s). 
+
+ 
+
+5.What is a Kubernetes Deployment and how does it differ from a ReplicaSet? 
+
+A ReplicaSet ensures that a specified number of pod replicas are running at any given time. However, a Deployment is a higher-level concept that manages ReplicaSets and provides declarative updates to Pods along with a lot of other useful features. Therefore, we recommend using Deployments instead of directly using ReplicaSets 
+
+ 
+
+6.Can you explain the concept of rolling updates in Kubernetes? 
+
+Rolling update strategy offers us high availability. Assume you have four Pods running. If you are updating the Deployment, then the Rolling update will delete one Pod and creates a new Pod. This will be repeated for the other three Pods too. So, the rolling update ensures the application is accessible at any time. There is no downtime. 
+
+ 
+
+7.How does Kubernetes handle network security and access control? 
+
+Kubernetes has a built-in object for managing network security: Network Policy. While it allows the user to define the relationship between pods with ingress and egress policies, it is basic and requires very precise IP mapping of a solution — which changes constantly, so most users I've talked to are not using it. 
+
+Kubernetes ships an integrated Role-Based Access Control (RBAC) component that matches an incoming user or group to a set of permissions bundled into roles. These permissions combine verbs (get, create, delete) with resources (pods, services, nodes) and can be namespace-scoped or cluster-scoped. 
+
+ 
+
+8.Can you give an example of how Kubernetes can be used to deploy a highly available 
+
+ Application? 
+
+In Kubernetes, we have different master node components i.e., Kube API-server, etcd, Kube-scheduler due to any failure if this single master node fails this cause a big impact on business. so, to solve this issue we deploy multiple master nodes to provides high availability for a single cluster and improves performance 
+
+For example, you can automate Kubernetes to create new containers for your deployment, remove existing containers and adopt all their resources to the new container. Automatic bin packing You provide Kubernetes with a cluster of nodes that it can use to run containerized tasks. 
+
+ 
+
+9.What is namespace is Kubernetes? Which namespace any pod takes if we don't specify any namespace? 
+
+Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster.   
+
+There are two types of Kubernetes namespaces: Kubernetes system namespaces and custom namespaces. 
+
+Default Kubernetes namespaces 
+
+Here are the four default namespaces Kubernetes creates automatically: 
+
+default—a default space for objects that do not have a specified namespace. 
+
+Kube-system—a default space for Kubernetes system objects, such as kube-dns and kube-proxy, and add-ons providing cluster-level features, such as web UI dashboards, ingresses, and cluster-level logging. 
+
+kube-public—a default space for resources available to all users without authentication. 
+
+kube-node-lease—a default space for objects related to cluster scaling. 
+
+ 
+
+10.How ingress helps in Kubernetes? 
+
+There are several ways to expose your application to the outside of your Kubernetes cluster, and you'll want to select the appropriate one based on your specific use case.  
+
+The four main options we'll be comparing in this post are: ClusterIP, NodePort, LoadBalancer, and Ingress 
+
+The Kubernetes Ingress API lets you expose your applications deployed in a Kubernetes cluster to the Internet with routing rules into a single source. To implement Ingress, you need to configure an Ingress Controller in your cluster—it is responsible for processing Ingress Resource information and allowing traffic based on the Ingress Rules. It's important to choose the right service with appropriate configuration to expose your application to the Internet 
+
+ 
+
+11.Explain different types of services in Kubernetes? 
+
+ 
+There are five types of Services: 
+
+ClusterIP (default): Internal clients send requests to a stable internal IP address. 
+
+NodePort: Clients send requests to the IP address of a node on one or more nodePort values that are specified by the Service. 
+
+LoadBalancer: Clients send requests to the IP address of a network load balancer. 
+
+ExternalName: Internal clients use the DNS name of a Service as an alias for an external DNS name. 
+
+Headless: You can use a headless service when you want a Pod grouping, but don't need a stable IP address. 
+
+ 
+
+12.Can you explain the concept of self-healing in Kubernetes and give examples of how it works? 
+
+Kubernetes ensures that the actual state of the cluster and the desired statue of the cluster are always in-sync. This is made possible through continuous monitoring within the Kubernetes cluster. Whenever the state of a cluster changes from what has been defined, the various components of Kubernetes work to bring it back to its defined state. This automated recovery is often referred to as self-healing. 
+
+Ex: 
+
+Suppose you have 2 pod and these 2 pods i.e. (pod1, pod2) are running 2 nodes i.e. (node 1, node 2) respectively. 
+
+If node 2 is down, after some time You can see that the state of the pod that was running on "failed" node is Unknown. 
+
+When we describe this ‘unknown’ pod, you can see that the Status of Unknown pod is Terminating, Termination Grace Period will be the 30s by default and the reason for this is Node Lost. Also, you will see the messages that specifies that our node which was running our pod is unresponsive. 
+
+and your pod is running on node1.  
+
+	Pod count is not sync. 
+
+Name 
+
+Status 
+
+Node 
+
+pod1 
+
+Running 
+
+Node1 
+
+pod2 
+
+Running 
+
+Node1 
+
+pod1 
+
+Unknown 
+
+Node2 
+
+ 
+
+Now, let's start our "failed" node and wait till it successfully rejoins the cluster. 
+Alright, once "failed" node is up and running, let's go ahead and check the status of our deployment: 
+
+We will see that our pod count is in sync. So, let's list our pods out: 
+
+Name 
+
+Status 
+
+Node 
+
+pod1 
+
+Running 
+
+Node1 
+
+pod2 
+
+Running 
+
+Node1 
+
+ 
+
+We will see that our Kubernetes cluster has finally terminated the old pod, and we are left with our desired count of 2 pods. 
+
+ 
+
+13.How does Kubernetes handle storage management for containers? 
+
+When managing containerized environments, Kubernetes storage is useful for storage administrators, because it allows them to maintain multiple forms of persistent and non-persistent data in a Kubernetes cluster. This makes it possible to create dynamic storage resources that can serve different types of applications. 
+
+ 
+In Kubernetes, the most basic type of storage is non-persistent. Each container has non-persistent storage by default—this storage uses a temporary directory on the machine that hosts the Kubernetes pod. It is portable, but not durable. 
+
+Kubernetes supports multiple types of persistent storage. This can include file, block, or object storage services from cloud providers (such as Amazon S3), storage devices in the local data center, or data services like databases. Kubernetes provides mechanisms to abstract this storage for applications running on containers, so that applications never communicate directly with storage media. 
+
+ 
+
+14.How does the NodePort service work? 
+
+The NodePort service serves as the external entry point for incoming requests for your app. The assigned NodePort is publicly exposed in the Kube proxy settings of each worker node in the cluster. Every worker node starts listening on the assigned NodePort for incoming requests for the service. 
+
+15.What is a multinode cluster and single-node cluster in Kubernetes? 
+
+As the name says, Single Node Hadoop Cluster has only a single machine whereas a Multi-Node Hadoop Cluster will have more than one machine. 
+
+In a single node hadoop cluster, all the daemons i.e., DataNode, NameNode, TaskTracker and JobTracker run on the same machine/host. In a single node hadoop cluster setup everything runs on a single JVM instance. 
+
+In a multi-node hadoop cluster, all the essential daemons are up and run on different machines/hosts.  A multi-node  hadoop cluster setup has a master slave architecture where in one machine acts as a master that runs the NameNode daemon while the other machines act as slave or worker nodes to run other hadoop daemons.   
+
+16.Difference between create and apply in Kubernetes? 
+
+the key difference between kubectl apply and create is that apply creates Kubernetes objects through a declarative syntax, while the create command is imperative. The command set kubectl apply is used at a terminal’s command-line window to create or modify Kubernetes resources defined in a manifest file. This is called a declarative usage. The state of the resource is declared in the manifest file, then kubectl apply is used to implement that state. 
+
+Also after modifying manifest file again you running kubectl create command , you will get error. 
+
+But when we using kubectl apply, you will not get this type of error. 
+
+ 
+
+These questions will help you in your next DevOps Interview. 
+
+Happy Learning :) 
+
+ 
