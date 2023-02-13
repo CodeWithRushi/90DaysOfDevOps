@@ -1,0 +1,247 @@
+Day 36 Task: Managing Persistent Volumes in Your Deployment 💥 
+
+ 
+
+🙌 Kudos to you for conquering ConfigMaps and Secrets in Kubernetes yesterday. 
+
+🔥 You're on fire! 🔥 
+
+What are Persistent Volumes in k8s 
+
+ 
+
+In Kubernetes, a Persistent Volume (PV) is a piece of storage in the cluster that has been provisioned by an administrator. A Persistent Volume Claim (PVC) is a request for storage by a user. The PVC references the PV, and the PV is bound to a specific node. 
+
+ 
+
+A persistent Volume (PV) is a cluster-wide resource that you can use to store data in a way that it persists beyond the lifetime of a pod. 
+
+In Order to use a PV, you need to claim it first, using a Persistent Volume Claim (PVC). The PVC request a PV with your desired specification (size, access modes,speed,etc.) from Kubernetes and once a suitable Persistent Volume is found, it is bound to a PersistentVolumeClaim. 
+
+After a successful bound to a pod, you can mount it as a volume.   
+
+For more information, Please Read official documentation of Persistent Volumes. 
+
+ 
+
+Today's tasks: 
+
+ 
+
+Prerequisites: 
+
+1] create new AWS EBS Volume and the Availability zone is same as minikube Availability Zone 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Task 1: 
+
+ 
+
+Add a Persistent Volume to your Deployment Todo app. 
+
+Create a Persistent Volume using a file on your node. Template 
+
+		vi pvol.yaml 
+
+apiVersion: v1 
+
+kind: PersistentVolume  
+
+metadata:  
+
+    name: myebsvol 
+
+    namespace: react-django-ns  
+
+spec:  
+
+    capacity:  
+
+       storage: 1Gi  
+
+    accessModes:   
+
+       - ReadWriteOnce  
+
+     persistentVolumeReclaimPolicy: Recycle  
+
+        awsElasticBlockStore:  
+
+            volumeID:  vol-0a099a3d142f55e58 # Put your EBS volume ID 
+
+            fsType: ext4 
+
+ 
+
+ 
+
+Create a Persistent Volume Claim that references the Persistent Volume. Template 
+
+vi pvclaim.yaml 
+
+apiVersion: v1  
+
+kind: PersistentVolumeClaim  
+
+metadata:  
+
+    name: myebsvolclaim  
+
+    namesspace: react-django-ns 
+
+spec:  
+
+    accessModes:   
+
+        - ReadWriteOnce  
+
+     resources:  
+
+         requests:  
+
+            storage: 1Gi 
+
+	 
+
+Update your deployment.yml file to include the Persistent Volume Claim. After Applying pv.yml pvc.yml your deployment file look like this Template 
+
+		vi deployment-pv .yaml 
+
+apiVersion: apps/v1 
+
+kind: Deployment 
+
+metadata: 
+
+  name: django-deployment 
+
+  namespace: react-django-ns 
+
+  labels: 
+
+    app: django 
+
+spec: 
+
+  replicas: 3 
+
+  selector: 
+
+    matchLabels: 
+
+      app: django 
+
+  template: 
+
+    metadata: 
+
+      labels: 
+
+        app: django 
+
+    spec: 
+
+      containers: 
+
+        - name: django-ctr 
+
+          image: rushis750/django:latest 
+
+          ports: 
+
+            - containerPort: 8001 
+
+          volumeMounts:  
+
+               - name: mypd  
+
+                 mountPath: "/tmp/persistent"  
+
+       volumes:  
+
+            - name: mypd  
+
+              persistentVolumeClaim:  
+
+                   claimName: myebsvolclaim 
+
+ 
+
+		kubectl apply -f pvol.yaml -n react-django-ns 
+
+ 
+
+		kubectl apply -f pvclaim.yaml -n react-django-ns 
+
+ 
+
+Apply the updated deployment using the command: kubectl apply -f deployment.yml 
+
+		kubectl apply -f deployment-pv.yaml -n react-django-ns 
+
+ 
+
+ 
+
+Verify that the Persistent Volume has been added to your Deployment by checking the status of the Pods and Persistent Volumes in your cluster.  
+
+		kubectl get pods -n react-django-ns 
+
+ 
+
+⚠️ Don't forget: To apply changes or create files in your Kubernetes deployments, each file must be applied separately. ⚠️ 
+
+ 
+
+Task 2: 
+
+ 
+
+Accessing data in the Persistent Volume, 
+
+Connect to a Pod in your Deployment using command: `kubectl exec -it -- /bin/bash 
+
+ 
+
+`	kubectl exec django-deployment-768b75d6d-hcff8 -it -n react-django-ns -- /bin/bash 
+
+ 
+
+Verify that you can access the data stored in the Persistent Volume from within the Pod 
+
+	For verification purpose, you can delete one pod 
+
+		kubectl delete pod django-deployment-768b75d6d-hcff8 -n react-django-ns 
+
+ 
+
+Check the running pods status 
+
+		kubectl get pods -n react-django-ns 
+
+ 
+
+Go inside this newly created pod and see, the created file is available or not? 
+
+		kubectl exec django-deployment-768b75d6d-fsvzs -it -n react-django-ns -- /bin/bash 
+
+ 
+
+Need help with Persistent Volumes? Check out this video for assistance. 
+
+Keep up the excellent work🙌💥 
+
+Happy Learning :) 
+
+ 
+
+ 
+
+ 
