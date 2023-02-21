@@ -1,0 +1,48 @@
+Day 40 AWS EC2 Automation ☁
+I hope your journey with AWS cloud and automation is going well😍
+Automation in EC2:
+Amazon EC2 or Amazon Elastic Compute Cloud can give you secure, reliable, high-performance, and cost-effective computing infrastructure to meet demanding business needs.
+Also, if you know a few things, you can automate many things.
+Read from here
+Launch template in AWS EC2:
+• You can make a launch template with the configuration information you need to start an instance. You can save launch parameters in launch templates, so you don't have to type them in every time you start a new instance.
+• For example, a launch template can have the AMI ID, instance type, and network settings that you usually use to launch instances.
+• You can tell the Amazon EC2 console to use a certain launch template when you start an instance.
+Read more from here
+Instance Types:
+Amazon EC2 has a large number of instance types that are optimized for different uses. The different combinations of CPU, memory, storage and networking capacity in instance types give you the freedom to choose the right mix of resources for your apps. Each instance type comes with one or more instance sizes, so you can adjust your resources to meet the needs of the workload you want to run.
+Read from here
+AMI:
+An Amazon Machine Image (AMI) is an image that AWS supports and keeps up to date. It contains the information needed to start an instance. When you launch an instance, you must choose an AMI. When you need multiple instances with the same configuration, you can launch them from a single AMI.
+Task1:
+• Create a launch template with Amazon Linux 2 AMI and t2. micro instance type with Jenkins and Docker setup (You can use the Day 39 User data script for installing the required tools.
+Steps:
+1] Click on the Launch template in the left navigation pane
+2] Choose Create Launch Template
+Enter a Template name and Template version.
+3] Choose one of the AMI (Amazon Machine Image). In this Demo, I selected Amazon Linux AMI.
+and The Instance type is t2. micro.
+4] Select Subnet and security Group.
+5] In the "Advanced Details" section, paste the user data script for installing Jenkins and Docker in the "User data" field.
+6] Hey, Template is Ready.
+7] Now it’s time to create an instance using this template.
+Go to Action tab and click Launch instance from template.
+• Create 3 Instances using Launch Template, there must be an option that shows number of instances to be launched, can you find it? 😊
+8] Specify the number of instances you want to launch in the "Number of instances" field on the right side. Choose the other configuration settings as desired, such as VPC, subnet, security group, and so on.
+9] Instance is created successfully.
+• You can go one step ahead and create an auto-scaling group, sounds tough?
+1] In the left navigation pane, choose "Auto Scaling Groups".
+Choose "Create Auto Scaling Group".
+2] In the "Create Auto Scaling Group" page, enter a name for the auto-scaling group.
+For "Launch Template", choose the launch template we created earlier.
+3] For "Network", choose the VPC and subnet you want the instances to launch in.
+4] For "Load balancing", choose any option as per your requirement.
+For Demo purpose, I selected No Load Balancer Option.
+5] In the "Group Size" page, enter the desired capacity for the auto-scaling group, such as 2.
+6] Add a Notifications alert using SNS service.
+Add notification name and recipient email address.
+7] Review the Configurations.
+8] After a few moments, the auto-scaling group will launch the desired number of instances based on the launch template and the configuration you specified. below two new instances launched by auto-scaling group.
+9] see our Jenkins is installed successfully.
+10] When load is increased, see one instance is created automatically.
+Happy Learning :)
