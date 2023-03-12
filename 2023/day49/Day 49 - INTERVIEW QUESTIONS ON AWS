@@ -1,0 +1,179 @@
+Day 49 - INTERVIEW QUESTIONS ON AWS 
+
+ 
+
+Hey people, we have listened to your suggestions, and we are looking forward to getting more! As you people have asked to put more interview-based questions as part of Daily Task, So here it 😊 
+
+ 
+
+INTERVIEW QUESTIONS: 
+
+ 
+
+Name 5 aws services you have used and what's the use cases? 
+
+AWS EC2: Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. I have used AWS EC2 to deploy web applications, run batch jobs and host web services. 
+
+AWS RDS: Almost all applications deployed in AWS will need access to a database. This is where AWS’ Relational Database Service (RDS) fits in. RDS is a managed service from AWS using which you can set up, operate and scale a relational database in the cloud easily. I have used RDS to manage MySQL and PostgreSQL DB for my application. 
+
+AWS S3: Amazon S3 or Amazon Simple Storage Service is a service that provides cloud-based persistent storage through a web service interface. It’s built to store, protect and retrieve data from “buckets” at any time, from anywhere, on any device. I have used S3 to store and retrieve both static and dynamic assets like images, raw data (JSON, XML) for my application. 
+
+AWS ECS: Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast container management service that makes it easy to run, stop, and manage containers on a cluster. ECS comes with two launch types: EC2 and Fargate.I have used ECS to run my application Serverless using Fargate. 
+
+AWS VPC: Amazon Virtual Private Cloud (Amazon VPC) provides a logically isolated area of the AWS cloud where you can launch AWS resources in a virtual network that you define. I have used AWS VPC to customize the network configuration for my application. 
+
+ 
+
+What are the tools used to send logs to the cloud environment? 
+
+There are various tools that can be used to send logs to the cloud environment. Some popular tools include: 
+
+ Amazon CloudWatch Logs  
+
+AWS CloudTrail  
+
+AWS Elastic Beanstalk  
+
+ Logstash  
+
+ Fluentd  
+
+Splunk 
+
+ 
+
+What are IAM Roles? How do you create /manage them? 
+
+An IAM role is an IAM identity that you can create in your account that has specific permissions. An IAM role is similar to an IAM user, in that it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. 
+
+An IAM role can be created with the help of AWS Management Console, AWS CLI, Tools for Windows PowerShell or IAM API. 
+
+How to upgrade or downgrade a system with zero downtime? 
+
+The best way to achieve a zero-downtime upgrade is with a blue/green deployment. This involves creating a new instance of the desired tier, readying it for production, swapping traffic over to it, then terminating the old instance. 
+
+ 
+You can upgrade or downgrade a system with near-zero downtime using the following steps of migration: 
+
+ Open EC2 console 
+
+Choose Operating System AMI 
+
+Launch an instance with the new instance type 
+
+Install all the updates 
+
+Install applications 
+
+Test the instance to see if it’s working 
+
+If working, deploy the new instance and replace the older instance 
+
+Once it’s deployed, you can upgrade or downgrade the system with near-zero downtime. 
+
+ 
+
+What is infrastructure as code and how do you use it? 
+
+Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes. With IaC, configuration files are created that contain your infrastructure specifications, which makes it easier to edit and distribute configurations. IaC tools such as AWS CloudFormation, AWS CDK, and Terraform enable developers to define infrastructure as code using a high-level language, version control the code, and automate the deployment and management of infrastructure. This approach helps to improve consistency, reduce errors, and increase agility. 
+
+ 
+
+What is a load balancer? Give scenarios of each kind of balancer based on your experience. 
+
+Load balancing is the method of distributing network traffic equally across a pool of resources that support an application. 
+
+Types of Load Balancer in AWS 
+
+These are the unique Versions of AWS ELB, let’s discuss them one by one: 
+
+a. Classic Load Balancers: Classic Load Balancers distribute upcoming traffic to different EC2 instances in multiple Availability Zones. During this process, there is a chance of fault tolerance of your application. These Load Balancers detect healthy and unhealthy instances and direct the traffic towards only healthy ones. supporting both HTTP and TCP traffic 
+
+b. Application Load Balancers 
+
+After receiving the request Application Load Balancer analyzes the rules provide by the listener in priority order and determines the rule which has to apply. After that, it selects a target from the target group for the rule action. 
+
+ALB used to route HTTP/HTTPS traffic to specific endpoints based on path, host, or query string. 
+
+c. Network Load Balancers 
+
+After the load balancer receives a connection request, it selects a target from the group which targets for the default rule. 
+
+NLB used to handle TCP and UDP traffic at the transport layer, providing low latency and high throughput for applications. 
+ 
+
+What is CloudFormation and why is it used for? 
+
+CloudFormation is an infrastructure automation platform for AWS that helps you model and set up your AWS resources so that you can spend less time managing those resources and more time focusing on your applications that run in AWS. You create a template that describes all the AWS resources that you want (like Amazon EC2 instances or Amazon RDS DB instances), and CloudFormation takes care of provisioning and configuring those resources for you. You don't need to individually create and configure AWS resources and figure out what's dependent on what; CloudFormation handles that. 
+
+Difference between AWS CloudFormation and AWS Elastic Beanstalk? 
+
+AWS CloudFormation and AWS Elastic Beanstalk are both AWS services used for deploying and managing applications on AWS. However, they serve different purposes and have different features. 
+
+1] AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment, think Infrastructure as Code (IaC). AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with a variety of languages.  
+
+2] AWS CloudFormation is focused on managing infrastructure while AWS Elastic Beanstalk is focused on managing applications.  
+
+3] CloudFormation is useful for managing large and complex AWS environments, while Elastic Beanstalk is useful for quickly deploying and scaling web applications without worrying about the underlying infrastructure. 
+
+What are the kinds of security attacks that can occur on the cloud? And how can we minimize them? 
+
+There are various security attacks that can occur on the cloud, some of them are:  
+
+1] Data breaches: unauthorized access to data by an attacker.  
+
+2] DDoS attacks: a distributed denial of service (DDoS) attack can cause service interruptions or even downtime, by overwhelming the cloud infrastructure with excessive traffic.  
+
+3] Man-in-the-middle attacks: An attacker can intercept communications between cloud service providers and their customers.  
+
+4] Malware attacks: Malware can be introduced into the cloud environment, which can harm cloud infrastructure and services.  
+
+5] Account hijacking: Attackers can gain unauthorized access to cloud user accounts and misuse them.  
+
+To minimize these security threats, there are several measures you can take:  
+
+1] Strong access control: Ensure that only authorized individuals have access to cloud resources. 2] Data encryption: Data should be encrypted to protect against data breaches.  
+
+3] multi-factor authentication: Adding an additional layer of security to access control by using multi-factor authentication.  
+
+4] Regular audits: Regular audits to ensure that the cloud environment is secure and compliant with security standards. 
+
+ 5] DDoS protection: Use DDoS protection services to minimize the effects of DDoS attacks.  Employee training: Provide regular training and awareness programs to employees about security threats and how to avoid them.  
+
+6] Use security tools: Use security tools such as firewalls, antivirus software, and intrusion detection systems to protect the cloud infrastructure from malware and other 
+
+Can we recover the EC2 instance when we have lost the key? 
+
+If we have lost the private key associated with your Amazon Elastic Compute Cloud (EC2) instance, it may not be possible to recover the key or regain access to the instance. The private key is used to authenticate with the instance and without it, you will not be able to establish a secure connection to the instance. However, there are some possible options to recover the EC2 instance or regain access to it:  
+
+1] Create a new key pair & associate it with the instance.  
+
+2] If you have previously set up a password for your instance, we may be able to use that password to log in to the instance.  
+
+3] AWS Systems Manager provides a feature called Session Manager, which allows you to establish a remote session with your EC2 instance without the need for a private key.  
+
+4] Restore from a snapshot of the instance. 
+
+What is a gateway? 
+
+1]A gateway is a device or software application that connects two or more computer networks using different communication protocols, allowing them to communicate with each other.  
+
+2] Gateways are often used to provide access to external networks or services, such as the Internet or cloud-based services. They can also be used to provide security by filtering and blocking unwanted traffic and preventing unauthorized access to a network. 
+
+What is the difference between the Amazon RDS, DynamoDB, and Redshift? 
+
+1] Amazon RDS (Relational Database Service) is a fully managed database service that makes it easy to set up, operate, and scale a relational database in the cloud. It supports several popular database engines, including MySQL, PostgreSQL, Oracle, and SQL Server. RDS is designed for applications that require complex SQL queries and transactions. It is a good choice for traditional relational database workloads, where data consistency and transactional integrity are crucial.  
+
+2] DynamoDB, on the other hand, is a fully managed NoSQL database service that provides fast and flexible document and key-value data storage. It is designed for applications that require low-latency, high-throughput access to data, such as gaming, IoT, and real-time bidding. DynamoDB is highly scalable and can handle millions of requests per second, making it a good choice for applications that need to scale rapidly.  
+
+3] Redshift is a fully managed data warehousing service that allows businesses to store and analyze large amounts of data using SQL queries. Redshift is optimized for performance and can handle petabyte-scale data warehouses. It is a good choice for organizations that need to store and analyze large amounts of data for business intelligence or data analytics purposes. 
+
+Do you prefer to host a website on S3? What's the reason if your answer is either yes, or no? 
+
+Yes, S3 can also be used for hosting static websites even though it was primarily designed for storing and retrieving data. A static website is one that is built using HTML, CSS, and JavaScript, and it does not require server-side processing or a database.  
+
+1] One advantage of hosting a website on S3 is that it is a very cost-effective solution. S3 charges based on the amount of storage used and the amount of data transferred, and the rates are generally lower than those of other hosting solutions. Another advantage is that S3 is highly scalable and can handle large amounts of traffic.  
+
+2] Since S3 is a part of AWS, you can easily integrate it with other AWS services, such as CloudFront (AWS's content delivery network), Route 53 (AWS's DNS service), and Lambda (AWS's serverless computing service), to create a more comprehensive web hosting solution. If you have a small, static website and want a cost-effective and scalable solution, S3 could be a good choice. 
+
+ 
